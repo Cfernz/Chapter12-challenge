@@ -130,16 +130,14 @@ sample_files=($(cut -f 3 "$sample_info"))
 
 ```
 Now we can see what is in the array using `echo` commands. 
-Use the key to answer the following questions. <array> = the name of the array
+Use the key to answer the following questions. array = the name of the array
 all commands should be preceded by `echo`
-| Key ||
-| --- | --- |
 | command | output |
 | ------- | ------ |
-| ${<array>[n]} | nth item in array |
-| ${<array>[@]} | all items in array |
-| ${#<array>[@]} | number of items in array |
-| ${!<array>[@]} | index of each item in array |
+| ${array[n]} | nth item in array |
+| ${array[@]} | all items in array |
+| ${#array[@]} | number of items in array |
+| ${!array[@]} | index of each item in array |
 
 How many items are there in the array?
 What is the 3rd item?
