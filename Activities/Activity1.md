@@ -51,5 +51,41 @@ Other things to keep in mind: Avoid spaces in variable names and specfications. 
 
 #### Arguments
 Instead of specifying variables in the script, we can provide information through command line arguments.
+```
+#!/bin/bash
+#hello.sh
+
+name=$1
+month=$2
+date=$3
+
+echo "Hello, $name, it is $month $date."
+
+```
+Now call the script. What do you get? What happens if you don't specify all the arguments? What happens if you don't specify the arguments and `set -u` is set? Move on to the next section to see how you can make the script throw a more human-friendly error if arguments aren't specified.
+Bonus: How can you make the script tell you what the name of the script is?
+
+### Conditionals and Loops
+#### Conditionals
+Recall that conditionals are `if` statements that allow us to check whether certain criteria are met before running a command.
+How can you use and `if` statement to print an error message telling a user if not enough argument are provided to the `hello.sh` script?
+Here's a start, but you can check the `hello-final.sh` script from the repository if you get stuck.
+```
+#!/bin/bash
+#hello.sh
+
+name=$1
+month=$2
+date=$3
+
+if [ command ]
+then
+        echo "error: too few arguments, you provided $#, 3 required."
+        echo "usage: hello.sh name month date"
+        exit 1
+else
+        [else statement] #hint - you already have this statement
+fi
+```
 
 
