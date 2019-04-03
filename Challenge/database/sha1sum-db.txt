@@ -1,0 +1,6 @@
+8f2da519548cb9d158daefbcb6048323acc0d493  challenge-db.nhr
+824ba4b96296a7c66eea5fa76f2a851eaf903841  challenge-db.nin
+41eac3336781863404fab4c306bf8ac938d51017  challenge-db.nog
+8014ca4608354a353c7b8356b96c259b71637573  challenge-db.nsd
+1df174be1e87ff7ea3254ba3a6c2009eb0e0d028  challenge-db.nsi
+d65b8e63b1b3f3bd9e7221a073c492df2a36e876  challenge-db.nsq
