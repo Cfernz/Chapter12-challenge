@@ -5,7 +5,7 @@ Spaces are Bad in filenames, try to avoid them...
 
 1. Navigate to where you cloned the Book git repository.  
 2. Use ls on your repository  
-	`ls ./<your git repo>` (replace path with your repo bds-files)  
+	`ls ./bds-files`  
 3. Next use `find ./bds-files`  
 
 Describe the difference between the two programs  
@@ -32,9 +32,9 @@ Now we are going to make some fake fastq files to practice with
 3. Make some fastq seq files  
 	`touch seqs/zmays{A,B,C}_R{1,2}.fastq`  
 	
-[ ] Find all files matching name "zmaysB"  
-[ ] Find all files that match zmaysB or zmaysC  
-[ ] Provide two ways to find zmaysA and zmaysB fastq files  
+- [ ] Find all files matching name "zmaysB"  
+- [ ] Find all files that match zmaysB or zmaysC  
+- [ ] Provide two ways to find zmaysA and zmaysB fastq files  
 
 ### Common find expressions  
 | Operator/expression | Description |
@@ -50,5 +50,105 @@ Now we are going to make some fake fastq files to practice with
 | expr -and expr | Logical “and” |
 | expr -or expr | Logical “or” |
 | -not / "!"expr | Negation |
-| (expr) | Group a set of expression |
+| (expr) | Group a set of expression |  
+
+### One more find example  
+
+
+Suppose that a messy collaborator decided to create a file named zmaysB_R1-temp.fastq in seqs/  
+You can use the following commands to filter out the messy filename, and repremand the collaborator later lol  
+
+`touch seqs/zmaysB_R1-temp.fastq` this creates the messy filename  
+`find seqs -type f "!" -name "zmaysC*fastq"`  
+
+You don’t want to delete his file or rename it, because your collaborator may  
+need that file and/or rely on it having that specific name. So, the best way to  
+deal with it seems to be to change your `find` command and talk to your  
+collaborator about this mystery file later. Luckily, `find` allows this sort of  
+advanced file querying:  
+
+`find seqs -type f "!" -name "zmaysC*fastq" -and "!" -name "*-temp*"`  
+
+
+
+## find -exec: Running commands on finds results  
+
+Let’s look at a simple example to understand how -exec works. Continuing  
+from our last example, suppose that a messy collaborator created numerous  
+temporary files. Let’s emulate this (in the /data/seqs directory):  
+`touch zmays{A,C}_R{1,2}-temp.fastq` creates some messy filenames  
+
+find will let us locate the messy files and delete them:  
+`find . -name "*-temp.fastq" -exec rm -i {} `  
+Notice the -i flag produces an interactive mode  
+
+
+# xargs: A Unix Powertool  
+
+xargs takes standard input as arguments:  
+Lets repeat the previous examples results (removing files) by using xargs  
+1. Recreate mystery files  
+	`touch zmays{A,C}_R{1,2}-temp.fastq`  
+2. Use find to locate filenames  
+	`find . -name "*-temp.fastq"`  
+3. Pipe find to xargs and rm  
+	`find . -name "*-temp.fastq" | xargs rm`  
+	
+If we wanted to inspect a long list of files `find` returns before running `rm` on  
+all files in this list, we could use:  
+
+1. Recreate mystery files  
+	`touch zmays{A,C}_R{1,2}-temp.fastq`
+2. Find files and create file
+	`find . -name "*-temp.fastq" > files-to-delete.txt`  
+3. Print file contents to stdout  
+	`cat files-to-delete.txt`  
+4. Use xargs to remove files  
+	`cat files-to-delete.txt | xargs rm`  
+
+
+Additionally we can use xargs to place arguments after a command in a bash script  
+1. Recreate mystery files  
+	`touch zmays{A,C}_R{1,2}-temp.fastq`  
+2. find, and add string to each file  
+	`find . -name "*-temp.fastq" | xargs -n 1 echo "rm -i" > delete-temp.sh`  
+3. Run the bash file  
+	`bash delete-temp.sh`  
+
+xargs can be used for more complex program arguments  
+By using -I {} we can place arguments exactly where we want them to be  
+
+If zmaysA_R1.fastq is the input what would populate each {}?  
+
+`find . -name "*.fastq" | xargs basename -s ".fastq" | \  
+xargs -I{} fastq_stat --in {}.fastq --out ../summaries/{}.txt`  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
