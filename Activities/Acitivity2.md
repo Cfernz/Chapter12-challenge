@@ -130,7 +130,8 @@ Make and makefiles can allow for an alternative way to generate pipelines.
 Lets look at a pipeline that downloads a file and makes a summary:  
 1. Navigate to Chapter12 directory  
 2. Explore the makefile  
-	`cat` `less` etc
+	`cat` `less` etc  
+	describe each section of the makefile (description in book chapter)  
 3. use `make all` to download the file  
 4. check the contents of the new files  
 	The .txt file has the following format  
