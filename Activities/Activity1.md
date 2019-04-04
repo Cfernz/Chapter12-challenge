@@ -88,7 +88,7 @@ else
 fi
 ```
 ##### working with `test`
-`test` is usually used to check whether a file or directory exists.
+`test` is usually used to check the type of input or whether a file or directory exists.
 First make a test directory and a number of test files:
 ```
 mdkir testdir
@@ -99,9 +99,11 @@ Now try:
 test -d testdir ; echo $?
 test -f testdir/testfileA.sam ; echo $?
 test -w testdir/testfileA.sam ; echo $?
+test -e testdir/testfileB.bam ; echo $?
+test -e testdir/testfileD.bam ; echo $?
 ```
 What do you get for each?
-Try combining `test` with an `if` statement.
+If you are comfortable with using `test` and condiitionals, try combining `test` with an `if` statement.
 
 #### For loops
 We can use loops to perform the same set of commands on multiple files.
