@@ -28,4 +28,8 @@ You may think about including:
   * Arguments (positional or flags) for the script to call  
   * Loop that takes files and passes them to BLAST  
   * BLAST (arguments should be taken from the initial command line)  
-  * [command line blast parameters](https://www.ncbi.nlm.nih.gov/books/NBK279684/)
+  * BLAST comes as an executable, you will need to provide the absolute path to the program for it to work.  
+
+
+
+[command line blast parameters](https://www.ncbi.nlm.nih.gov/books/NBK279684/)
