@@ -10,12 +10,13 @@ Spaces are Bad in filenames, try to avoid them...
 
 Describe the difference between the two programs  
 
-| find                 | ls               |
-| -------------------- | ---------------- |
-|                      |                  |
+find  
 
+---  
 
+ls  
 
+---  
 
 
 ### Find filenames with find  
@@ -124,6 +125,16 @@ If zmaysA_R1.fastq is the input what would populate each {}?
 xargs -I{} fastq_stat --in {}.fastq --out ../summaries/{}.txt`  
 
 
+# Make and Makefiles: Another Option for Pipelines  
+Make and makefiles can allow for an alternative way to generate pipelines.  
+Lets look at a pipeline that downloads a file and makes a summary:  
+1. Navigate to Chapter12 directory  
+2. Explore the makefile  
+	`cat` `less` etc
+3. use `make all` to download the file  
+4. check the contents of the new files  
+	The .txt file has the following format  
+Output format: chr, length, #A, #C, #G, #T, #2, #3, #4, #CpG, #tv, #ts, #CpG-ts  
 
 
 
