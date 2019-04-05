@@ -30,6 +30,7 @@ You may think about including:
   * BLAST (arguments should be taken from the initial command line)  
   * BLAST comes as an executable, you will need to provide the absolute path to the program for it to work.  
 
+ULTIMATE CHALLENGE: CAN YOU SAVE THE WORLD WITH ONE LINE???
 
 
 [command line blast parameters](https://www.ncbi.nlm.nih.gov/books/NBK279684/)
