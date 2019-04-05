@@ -24,7 +24,7 @@ ls
 Next lets `find` all the locations of the README.md in bds-files  
 
 1. Navigate to the bsd-files parent folder  
-2. use `find ./bsd-files/ -name README.md`  
+2. use `find ./bds-files/ -name README.md`  
 3. Compare the output if you used `-name *.md` or `-name README*`  
 
 Now we are going to make some fake fastq files to practice with  
