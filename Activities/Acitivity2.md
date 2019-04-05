@@ -29,7 +29,7 @@ Next lets `find` all the locations of the README.md in bds-files
 
 Now we are going to make some fake fastq files to practice with  
 1. Make a new directory titled data `mkdir data`  
-2. Create a subdirectory in data `mkdir seq`  
+2. Create a subdirectory in data `mkdir seqs`  
 3. Make some fastq seq files  
 	`touch seqs/zmays{A,B,C}_R{1,2}.fastq`  
 	
