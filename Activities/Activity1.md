@@ -5,7 +5,7 @@ If you have not done so already, make sure you have the book files for chapter 1
 #navigate to directory that you want to work in
 mkdir chapter12-files #or whatever name you like
 git clone https://github.com/vsbuffalo/bds-files.git
-cp -r bds-files/chapter12-pipelines/* chapter12-files/
+cp -r bds-files/chapter-12-pipelines/* chapter12-files/
 ``` 
 ### Scripts, Variables, and Arguments
 Bash scripts are shell scripts most often used to glue commands together into a workflow.
