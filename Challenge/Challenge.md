@@ -13,7 +13,7 @@ You are our last hope...
 1. Download BLAST package  
 	ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.9.0+-x64-linux.tar.gz  
 2. Extract the package  
-	`gunzip <file> | tar -xf -`  
+	`gunzip -c <file> | tar -xf -`  
 3. clone the github repository  (should already be done)  
   * https://github.com/Cfernz/Chapter12-challenge  
 4. use shasum -c to check for files integrity  

@@ -1,0 +1,10 @@
+161f87ffbfee7ba1b381f3033eaff2a1fca8e34a  challenge-input_10.fa
+51913b15250f626bf845994836263b5693a7eb8b  challenge-input_1.fa
+4afa84af086816c02228fd0523e1d2db2a94dfe4  challenge-input_2.fa
+9b9f6c6e3d17db86b9bfff2a912194ed6877ed0a  challenge-input_3.fa
+08ad2dd89109a7eb8d1f93fde38bc750d0f8c30e  challenge-input_4.fa
+cfb68bf4e3f1f3fa8a6b12b98de2594934d1b53a  challenge-input_5.fa
+1b0276cc0908198326cc0437f3e9f8f7a0f0f3be  challenge-input_6.fa
+d9d1d6d9fd846749c3706d06caf1aec8af8c973f  challenge-input_7.fa
+f8509cb22ab78e2639d0e0c04c85b781192c6a79  challenge-input_8.fa
+67006a374b51215857aad067e27dab7e87cbe6c2  challenge-input_9.fa
